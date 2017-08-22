@@ -35,6 +35,8 @@ async function main() {
     () => writeEnvFile('lets-encrypt', shelljs.env, './env.json'),
     () => decryptSecrets(secrets, './secrets'),
     `gcloud auth activate-service-account --key-file secrets/gcloud.travis.json`,
+     // Remove Travis key file so it does not get deployed with the service
+    'rm ./secrets/gcloud.travis.json*',
     () => retryCommand(`gcloud app deploy app.yaml --project ${PROJECT} --version ${BRANCH} --quiet`),
   ]);
 
