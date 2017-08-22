@@ -1,14 +1,12 @@
 #! /bin/node
 
-// Enable TS type checker for JavaScript
-// @ts-check
-
 const shelljs = require('shelljs');
 const fs = require('fs');
 const path = require('path');
 const decryptSecrets = require('@hollowverse/common-config/helpers/decryptSecrets');
 const executeCommands = require('@hollowverse/common-config/helpers/executeCommands');
 const retryCommand = require('@hollowverse/common-config/helpers/retryCommand');
+const writeEnvFile = require('@hollowverse/common-config/helpers/writeEnvFile');
 
 const {
   ENC_PASS_LETS_ENCRYPT,
@@ -34,7 +32,7 @@ async function main() {
   }
 
   const code = await executeCommands([
-    // () => writeEnvFile('env.json', 'default'),
+    () => writeEnvFile('lets-encrypt', shelljs.env, './env.json'),
     () => decryptSecrets(secrets, './secrets'),
     `gcloud auth activate-service-account --key-file secrets/gcloud.travis.json`,
     () => retryCommand(`gcloud app deploy app.yaml --project ${PROJECT} --version ${BRANCH} --quiet`),
