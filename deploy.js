@@ -3,10 +3,10 @@
 const shelljs = require('shelljs');
 const fs = require('fs');
 const path = require('path');
-const decryptSecrets = require('@hollowverse/common-config/helpers/decryptSecrets');
-const executeCommands = require('@hollowverse/common-config/helpers/executeCommands');
-const retryCommand = require('@hollowverse/common-config/helpers/retryCommand');
-const writeEnvFile = require('@hollowverse/common-config/helpers/writeEnvFile');
+const decryptSecrets = require('@hollowverse/common/helpers/decryptSecrets');
+const executeCommands = require('@hollowverse/common/helpers/executeCommands');
+const retryCommand = require('@hollowverse/common/helpers/retryCommand');
+const writeEnvFile = require('@hollowverse/common/helpers/writeEnvFile');
 
 const {
   ENC_PASS_LETS_ENCRYPT,

@@ -2,7 +2,7 @@
 
 // @ts-check
 const shelljs = require('shelljs');
-const executeCommands = require('@hollowverse/common-config/helpers/executeCommands');
+const executeCommands = require('@hollowverse/common/helpers/executeCommands');
 
 const { EMAIL, DOMAIN, CERT_NAME, STORAGE_BUCKET_ID } = require('./config');
 

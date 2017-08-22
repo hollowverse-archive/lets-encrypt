@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "Unlicense",
   "dependencies": {
-    "@hollowverse/common-config": "https://github.com/hollowverse/common-config",
+    "@hollowverse/common": "https://github.com/hollowverse/common",
     "shelljs": "^0.7.8"
   }
 }

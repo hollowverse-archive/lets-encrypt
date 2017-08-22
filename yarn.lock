@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+"@hollowverse/common-config@https://github.com/hollowverse/common":
+  version "1.2.0"
+  uid "78eaee4dbd82be4d9cf1b24e7f6430829aba419a"
+  resolved "https://github.com/hollowverse/common#78eaee4dbd82be4d9cf1b24e7f6430829aba419a"
+  dependencies:
+    "@types/minimatch" "^3.0.0"
+    "@types/node" "^8.0.24"
+    "@types/shelljs" "^0.7.4"
+    minimatch "^3.0.4"
+    shelljs "^0.7.8"
+
 "@hollowverse/common-config@https://github.com/hollowverse/common-config":
   version "1.2.0"
   resolved "https://github.com/hollowverse/common-config#78eaee4dbd82be4d9cf1b24e7f6430829aba419a"
