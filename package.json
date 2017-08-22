@@ -1,0 +1,12 @@
+{
+  "name": "lets-encrypt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Let's Encrypt service for Hollowverse",
+  "main": "index.js",
+  "license": "Unlicense",
+  "dependencies": {
+    "@hollowverse/common-config": "https://github.com/hollowverse/common-config",
+    "shelljs": "^0.7.8"
+  }
+}
