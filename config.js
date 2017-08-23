@@ -1,5 +1,5 @@
 const DOMAIN = 'hollowverse.com';
-const EMAIL = 'msafi@msafi.com';
+const EMAIL = 'mk@hollowverse.com';
 const CERT_NAME = `lets-encrypt-${DOMAIN}`;
 const STORAGE_BUCKET_ID = 'letsencrypt-hollowverse';
 
