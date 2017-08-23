@@ -25,10 +25,12 @@
     ]
   },
   "dependencies": {
-    "shelljs": "^0.7.8",
-    "@hollowverse/common": "https://github.com/hollowverse/common"
+    "@hollowverse/common": "https://github.com/hollowverse/common",
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {
+    "@types/shelljs": "^0.7.4",
+    "@types/node": "^8.0.24",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.0.2",
@@ -36,6 +38,9 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
+    "lint-staged": "^4.0.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.5.3",
     "stylelint": "^7.12.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-no-unsupported-browser-features": "^1.0.0",
@@ -44,9 +49,6 @@
     "tslint-eslint-rules": "^4.1.1",
     "tslint-microsoft-contrib": "^5.0.1",
     "tslint-react": "^3.0.0",
-    "typescript": "^2.4.2",
-    "prettier": "^1.5.3",
-    "lint-staged": "^4.0.3",
-    "pre-commit": "^1.2.2"
+    "typescript": "^2.4.2"
   }
 }

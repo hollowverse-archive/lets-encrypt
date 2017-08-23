@@ -21,6 +21,7 @@ const secrets = [
 
 async function main() {
   if (BRANCH !== 'master') {
+    console.info('Not on master branch. Nothing to do.');
     process.exit(0);
   }
 

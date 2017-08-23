@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 # Install prerequisites
-RUN apt-get update && apt-get install -y curl software-properties-common python-software-properties
+RUN apt-get update -qq && apt-get install -qq -y curl software-properties-common python-software-properties
 
 # Add certbot source
 RUN add-apt-repository -y ppa:certbot/certbot
@@ -19,7 +19,7 @@ RUN \
 # Import the Google Cloud public key
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
-RUN apt-get update && apt-get install -y certbot nodejs cron at google-cloud-sdk
+RUN apt-get update -qq && apt-get install -y -qq certbot nodejs cron at google-cloud-sdk
 
 RUN npm install -g http-server
 
