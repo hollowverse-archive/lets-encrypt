@@ -19,7 +19,7 @@ RUN \
 # Import the Google Cloud public key
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
-RUN apt-get update -qq && apt-get install -y certbot nodejs cron at google-cloud-sdk -qq
+RUN apt-get update -qq && apt-get install -y -qq certbot nodejs cron at google-cloud-sdk
 
 RUN npm install -g http-server
 
