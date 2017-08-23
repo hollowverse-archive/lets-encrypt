@@ -25,10 +25,10 @@
     ]
   },
   "dependencies": {
-    "shelljs": "^0.7.8",
-    "@hollowverse/common": "https://github.com/hollowverse/common"
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {
+    "@hollowverse/common": "https://github.com/hollowverse/common",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.0.2",
