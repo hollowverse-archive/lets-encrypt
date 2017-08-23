@@ -7,6 +7,7 @@ const executeCommands = require('@hollowverse/common/helpers/executeCommands');
 const { EMAIL, DOMAIN, CERT_NAME, STORAGE_BUCKET_ID } = require('./config');
 
 const SYNC_ROOT = `/etc/letsencrypt/`;
+const SYNC_COMMAND = `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`;
 
 async function main() {
   const code = await executeCommands([
@@ -14,7 +15,7 @@ async function main() {
     'gcloud auth activate-service-account --key-file /gcloud.letsEncrypt.json',
 
     // Restore previous certificate files from Cloud Storage (if any)
-    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`,
+    SYNC_COMMAND,
 
     // Create or update Let's Encrypt certificate if needed
     `certbot certonly \
@@ -85,7 +86,7 @@ async function main() {
     },
 
     // Upload the newly created certificate files to Cloud Storage (if any)
-    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`,
+    SYNC_COMMAND,
   ]);
 
   process.exit(code);
