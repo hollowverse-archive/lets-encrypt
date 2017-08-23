@@ -14,7 +14,7 @@ async function main() {
     'gcloud auth activate-service-account --key-file /gcloud.letsEncrypt.json',
 
     // Restore previous certificate files from Cloud Storage (if any)
-    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}`,
+    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`,
 
     // Create or update Let's Encrypt certificate if needed
     `certbot certonly \
@@ -85,7 +85,7 @@ async function main() {
     },
 
     // Upload the newly created certificate files to Cloud Storage (if any)
-    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}`,
+    `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`,
   ]);
 
   process.exit(code);
