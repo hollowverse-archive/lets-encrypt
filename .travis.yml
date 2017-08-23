@@ -8,7 +8,7 @@ script:
         -e BRANCH=$TRAVIS_BRANCH
         -e PROJECT=hollowverse-c9cad
         -e ENC_PASS_TRAVIS
-        -e ENC_PASS_LET_ENCRYPT
+        -e ENC_PASS_LETS_ENCRYPT
         hollowverse/hollowverse-gae
       ;
     fi
