@@ -29,8 +29,8 @@
     "shelljs": "^0.7.8"
   },
   "devDependencies": {
-    "@types/shelljs": "^0.7.4",
     "@types/node": "^8.0.24",
+    "@types/shelljs": "^0.7.4",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.0.2",
