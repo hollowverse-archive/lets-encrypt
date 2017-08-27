@@ -19,15 +19,19 @@ RUN \
 # Import the Google Cloud public key
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
-RUN apt-get update -qq && apt-get install -y -qq certbot nodejs cron at google-cloud-sdk
+# Add yarn source
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-RUN npm install -g http-server
+RUN apt-get update -qq && apt-get install -y -qq certbot nodejs cron at google-cloud-sdk yarn git
 
-# Add package.json so this layer can be cached independently
-ADD ./package.json .
+RUN yarn global add http-server
+
+# Add package.json and yarn.lock so this layer can be cached independently
+ADD package.json yarn.lock ./
 
 # Install dependencies for cert.js script
-RUN npm install
+RUN yarn
 
 # This directory will contain domain vertification files
 RUN mkdir -p ./public
