@@ -45,7 +45,7 @@ RUN mkdir -p ./public
 ADD ./secrets/gcloud.letsEncrypt.json .
 
 # Add the certificate genenration and update scripts and crontab file to the container
-ADD ./cronJobUpdate .
+ADD . .
 
 # Schedule renewal using a cron job
 RUN crontab cronJobUpdate
