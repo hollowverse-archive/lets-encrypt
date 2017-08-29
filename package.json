@@ -6,8 +6,8 @@
   "main": "index.js",
   "license": "Unlicense",
   "scripts": {
-    "test": "run-p eslint check-js validate-file-names",
-    "eslint": "eslint '**/*.js'",
+    "test": "run-p lint-js check-js validate-file-names",
+    "lint-js": "eslint '**/*.js'",
     "validate-file-names": "validate-file-names",
     "check-js": "tsc --noEmit",
     "lint-staged": "lint-staged"
