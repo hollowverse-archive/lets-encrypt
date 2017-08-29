@@ -6,6 +6,7 @@
   "main": "index.js",
   "license": "Unlicense",
   "scripts": {
+    "test": "tsc --noEmit",
     "validate-file-names": "validate-file-names",
     "check-js": "tsc --noEmit",
     "lint-staged": "lint-staged"
