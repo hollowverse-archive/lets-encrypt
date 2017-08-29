@@ -32,7 +32,7 @@ async function main() {
   commands = ['yarn test'];
 
   if (BRANCH !== 'master') {
-    console.info('Not on master branch. Nothing to do.');
+    console.info('Skipping deploying on non-master branches');
   } else if (isPullRequest === true) {
     console.info('Skipping deployment commands in PRs');
   } else {
