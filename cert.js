@@ -4,7 +4,13 @@
 const shelljs = require('shelljs');
 const executeCommands = require('@hollowverse/common/helpers/executeCommands');
 
-const { EMAIL, DOMAIN, CERT_NAME, STORAGE_BUCKET_ID } = require('./config');
+const {
+  EMAIL,
+  ROOT_DOMAIN,
+  SUB_DOMAINS,
+  CERT_NAME,
+  STORAGE_BUCKET_ID,
+} = require('./config');
 
 const SYNC_ROOT = `/etc/letsencrypt/`;
 const SYNC_COMMAND = `gsutil -q -m rsync -r ${SYNC_ROOT} gs://${STORAGE_BUCKET_ID}/config`;
@@ -24,12 +30,12 @@ async function main() {
       --noninteractive \
       --webroot \
       --webroot-path ./public \
-      -d ${DOMAIN}
+      -d ${[ROOT_DOMAIN, ...SUB_DOMAINS].join(',')}
     `,
 
     () => {
       // This directory contains the certificate files, including the private key
-      shelljs.cd(`/etc/letsencrypt/live/${DOMAIN}/`);
+      shelljs.cd(`/etc/letsencrypt/live/${ROOT_DOMAIN}/`);
       return 0;
     },
 
