@@ -10,6 +10,3 @@ skip_files:
 automatic_scaling:
   min_num_instances: 1
   max_num_instances: 1
-
-health_check:
-  enable_health_check: false
